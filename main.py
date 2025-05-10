@@ -28,7 +28,7 @@ async def update_images_periodically():
         except Exception as e:
             print(f"Ошибка обновления изображения: {e}")
 
-        await asyncio.sleep(120)
+        await asyncio.sleep(440)
 
 
 async def main():
