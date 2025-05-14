@@ -22,8 +22,11 @@ async def update_images_periodically():
                 img = await get_random_imgur_image()
                 if img:
                     new_images.append(img)
-            current_images[:] = new_images  # Изменяем список на месте
-            print(f"Изображения были обновлены!")
+            if len(new_images) == 5:
+                current_images[:] = new_images  # Изменяем список на месте
+                print(f"Изображения были обновлены!")
+            else:
+                print('Изображения были не обновлены!')
 
         except Exception as e:
             print(f"Ошибка обновления изображения: {e}")
