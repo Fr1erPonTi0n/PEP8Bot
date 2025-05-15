@@ -72,13 +72,24 @@ def _run_flake8(file_path: str, exceptions: List[str]) -> str:
             if len(parts) < 4:
                 continue
 
-            _, _, line_num, error = parts
-            error_parts = error.strip().split()
-            if not error_parts:
-                continue
+            # Для Linux
+            if '\\' not in parts[1]:
+                print('Linux')
+                _, line_num, col, error = parts
+                error_parts = error.strip().split()
+                if not error_parts:
+                    continue
+                error_code = error_parts[0] if len(error_parts) > 1 else ''
 
-            col = error_parts[0].rstrip(':')
-            error_code = error_parts[1] if len(error_parts) > 1 else ''
+            # Для Windows
+            else:
+                print('Windows')
+                _, _, line_num, error = parts
+                error_parts = error.strip().split()
+                if not error_parts:
+                    continue
+                col = error_parts[0].rstrip(':')
+                error_code = error_parts[1] if len(error_parts) > 1 else ''
 
             if error_code in exceptions:
                 continue
