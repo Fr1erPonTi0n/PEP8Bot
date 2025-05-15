@@ -34,10 +34,13 @@ async def process_code(content: str, user_id: int, message: Message) -> Optional
 
         # Авто форматирование кода (если включён)
         if await is_user_autoformat_enabled(telegram_id=user_id):
-            autoformat_result = await format_python_code(content, telegram_id=user_id)
-            if autoformat_result[0]:  # Если форматирование успешно
-                autoformat_message = autoformat_result[1]
-                result_message += (f">> Исправленный код <<\n{autoformat_message}",)
+            if not result_message[0] == "✅ Код соответствует PEP8.":
+                autoformat_result = await format_python_code(content, telegram_id=user_id)
+                if autoformat_result[0]:  # Если форматирование успешно
+                    autoformat_message = autoformat_result[1]
+                    result_message += (f">> Исправленный код <<\n{autoformat_message}",)
+            else:
+                result_message += (None,)
         else:
             result_message += (None,)
 
