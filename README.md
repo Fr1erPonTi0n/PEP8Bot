@@ -121,26 +121,18 @@ python main.py
 #### **Дополнительно**  
 - Если требуется ограничить доступ, включите **`WHITE_LIST_ENABLE=True`** в **`settings.py`** и укажите ID пользователей/чатов в **`config.env`**.  
 - Для изменения лимитов обработки измените **`MAX_CHARS`**, **`MAX_REQUESTS`** и **`ROLLBACK_TIME`** в **`settings.py`**
-- Команда для быстрого запуска бота (если уже установлены git и python):
+- Команда для быстрого запуска бота:
 
   На Linux:
   
   ```bash
-  git clone https://github.com/Fr1erPonTi0n/PEP8Bot.git && cd PEP8Bot && \
-  python3 -m venv venv && source venv/bin/activate && \
-  pip install -r requirements.txt && \
-  python3 create_config.py "ваш_telegram_bot_token" "ваш_imgur_api_token" && \
-  python3 main.py
+  sudo apt-get update && sudo apt-get install -y git python3 python3-pip python3-venv && git clone https://github.com/Fr1erPonTi0n/PEP8Bot.git && cd PEP8Bot && python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt && python3 create_config.py "ваш_telegram_bot_token" "ваш_imgur_api_token" && python3 main.py
   ```
 
-  На Windows:
+  На Windows (если уже установлены [git](https://git-scm.com/downloads/) и [python](https://www.python.org/downloads/)):
   
   ```powershell
-  git clone https://github.com/Fr1erPonTi0n/PEP8Bot.git && cd PEP8Bot && \
-  python -m venv venv && venv\Scripts\activate && \
-  pip install -r requirements.txt && \
-  python create_config.py "ваш_telegram_bot_token" "ваш_imgur_api_token" && \
-  python main.py
+  git clone https://github.com/Fr1erPonTi0n/PEP8Bot.git && cd PEP8Bot && python -m venv venv && venv\Scripts\activate && pip install -r requirements.txt && python create_config.py "ваш_telegram_bot_token" "ваш_imgur_api_token" && python main.py
   ```
 
 После запуска бот будет готов к работе! 🚀
