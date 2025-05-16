@@ -118,7 +118,6 @@ async def process_upload_file(message: Message, state: FSMContext):
         downloaded_file = await message.bot.download_file(file_info.file_path)
         content = downloaded_file.read().decode('utf-8')
         result = await process_code(content, message.from_user.id, message)
-        print(result)
         await message.answer(result[0])
         if result[1] is not None:
             await message.answer(result[1])
@@ -138,7 +137,8 @@ async def process_upload_text(message: Message, state: FSMContext):
     try:
         result = await process_code(message.text, message.from_user.id, message)
         await message.answer(result[0])
-        await message.answer(result[1])
+        if result[1] is not None:
+            await message.answer(result[1])
     except Exception as e:
         print(str(e))
         await message.answer(f"Ошибка при обработке текста")
