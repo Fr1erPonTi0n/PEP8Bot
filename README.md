@@ -129,13 +129,13 @@ python main.py
   На Linux:
   
   ```bash
-  sudo apt-get update && sudo apt-get install -y git python3 python3-pip python3-venv && git clone https://github.com/Fr1erPonTi0n/PEP8Bot.git && cd PEP8Bot && python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt && python3 create_config.py "ваш_telegram_bot_token" "ваш_imgur_api_token" && python3 main.py
+  sudo apt-get update && sudo apt-get install -y git python3 python3-pip python3-venv && git clone https://github.com/Fr1erPonTi0n/PEP8Bot.git && cd PEP8Bot && python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt && python3 create_config.py ваш_telegram_bot_token ваш_imgur_api_token && python3 main.py
   ```
 
   На Windows (если уже установлены [git](https://git-scm.com/downloads/) и [python](https://www.python.org/downloads/)):
   
   ```powershell
-  git clone https://github.com/Fr1erPonTi0n/PEP8Bot.git && cd PEP8Bot && python -m venv venv && venv\Scripts\activate && pip install -r requirements.txt && python create_config.py "ваш_telegram_bot_token" "ваш_imgur_api_token" && python main.py
+  git clone https://github.com/Fr1erPonTi0n/PEP8Bot.git && cd PEP8Bot && python -m venv venv && venv\Scripts\activate && pip install -r requirements.txt && python create_config.py ваш_telegram_bot_token ваш_imgur_api_token && python main.py
   ```
 
 После запуска бот будет готов к работе! 🚀
